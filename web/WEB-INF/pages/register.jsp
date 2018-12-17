@@ -11,12 +11,26 @@
     <title>Title</title>
 </head>
 <body>
-    <form action="doRegister">
-        用户名：<input type="text" name="username"><br>
+    <form action="doRegister" method="post">
+        用户名：<input type="text" name="username" id="uname"><span id="message"></span><br>
         密码：<input type="password" name="pwd"><br>
         确认密码: <input type="password" name="pwds"><br>
         电话：<input type="text" name="tele"><br>
         <input type="submit" value="注册">
     </form>
+
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            /*使用ajax*/
+            var un = $("#uname").val()
+            $.ajax({
+                url:"doRegister",
+                type:"get",
+                data:un
+            })
+        })
+
+    </script>
 </body>
 </html>

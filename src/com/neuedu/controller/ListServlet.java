@@ -19,4 +19,5 @@ public class ListServlet extends HttpServlet {
         req.setAttribute("lists",lists);
         req.getRequestDispatcher("WEB-INF/pages/list.jsp").forward(req,resp);
     }
+
 }

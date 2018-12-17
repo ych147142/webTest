@@ -1,5 +1,6 @@
 package com.neuedu.service;
 
+
 import com.neuedu.dao.IProductDao;
 import com.neuedu.dao.ProductDaoImpl;
 import com.neuedu.pojo.Product;
@@ -7,6 +8,7 @@ import com.neuedu.pojo.Product;
 import java.util.List;
 
 public class ProductServiceImpl implements IProductService {
+
     private IProductDao dao = new ProductDaoImpl();
     @Override
     public List<Product> getLists() {
@@ -26,5 +28,10 @@ public class ProductServiceImpl implements IProductService {
     @Override
     public Product getOne(int id) {
         return dao.getOne(id);
+    }
+
+    @Override
+    public int update(Product product) {
+        return dao.update(product);
     }
 }
